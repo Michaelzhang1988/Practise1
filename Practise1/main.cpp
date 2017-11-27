@@ -1,21 +1,19 @@
 #include <iostream>
 #include "MacroTest.h"
-
+#include "TemplateFun.h"
 using namespace std;
 using  std::string;
 void testMacroDefine();
+void testTemplate();
 
 int main()
 {
 	
 	cout<<"hello world!\n";
 
-
-	testMacroDefine();
-
-
-
-
+	
+	//testMacroDefine();
+	testTemplate();
 	system("pause");
 	return 0;
 
@@ -76,4 +74,27 @@ void testMacroDefine()
 
 	 
 
+}
+
+void testTemplate(){
+	double a =1.1;
+	double b = 2.2;
+	int aa = 1;
+	int bb = 2;
+	int aaa = 1;
+	double bbb = 2.6;
+	cout<<"max(a, b): "<<::max(a, b)<<endl;
+	cout<<"max(aa, bb): "<<::max(aa, bb)<<endl;
+	cout<<"max(aa, bb): "<<::max<double>(aaa, bbb)<<endl;
+	
+	cout<<"max(aa, bb): "<<::max1<int, double, double>(aaa, bbb)<<endl;
+	cout<<"max(aa, bb): "<<::max2<double>(aaa, bbb)<<endl;
+
+	cout<<::max3(7, 12, 67)<<endl;       //调用具有3个函数的模板
+	cout<<::max3(7.9, 34.5)<<endl;       //调用max<double>（通过实参演绎）
+	cout<<::max3('a', 'y')<<endl;        //调用max<char>（通过实参演绎）
+	cout<<::max3(7, 42)<<endl;           //调用int重载的非模板函数
+	cout<<::max3<>(7, 23)<<endl;         //调用max<int>（通过实参演绎）
+	cout<<::max3<double>(4, 45)<<endl;   //调用max<double>（没有实参演绎）
+	cout<<::max3('a', 23.4)<<endl;       //调用int重载的非模板函数
 }

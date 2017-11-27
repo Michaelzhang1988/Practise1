@@ -18,9 +18,15 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="TemplateFun.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MacroTest.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplateFun.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
