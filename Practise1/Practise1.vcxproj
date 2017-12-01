@@ -77,10 +77,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="TemplateClass.cpp" />
     <ClCompile Include="TemplateFun.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MacroTest.h" />
+    <ClInclude Include="TemplateClass.h" />
     <ClInclude Include="TemplateFun.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
